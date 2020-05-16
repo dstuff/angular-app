@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
-import { ApiService, StorageService } from './services';
-import { mapType, Type } from './models';
+import { ApiService, StorageService } from './core/services';
+import { mapType, Type } from './core/models';
 
 @UntilDestroy()
 @Component({

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import { DataService } from './data.service';
-import {IFullData} from "../models";
+import { IFullData } from '../models';
 
 
 const DATA_URL = 'https://someapiserver.com/json-data';

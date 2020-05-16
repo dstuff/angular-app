@@ -9,7 +9,7 @@ import {
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-import * as mockedData from '../../mocked-data/data.json';
+import * as mockedData from '../../../mocked-data/data.json';
 import { DataService } from '../services';
 import { IFullData } from '../models';
 
