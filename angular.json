@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fayrix-test"
+    }
+  },
+  "defaultProject": "fayrix-test",
+  "cli": {
+    "analytics": "b1e018a8-e093-4b19-96f8-8b25d935a70a"
+  }
 }
