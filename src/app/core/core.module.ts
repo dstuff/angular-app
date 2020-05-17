@@ -5,9 +5,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MockInterceptor } from './interceptors';
 import { MaterialModule } from '../material/material.module';
+import { DigitsOnlyDirective } from './directives';
 
 @NgModule({
-  declarations: [],
+  declarations: [DigitsOnlyDirective],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -21,6 +22,6 @@ import { MaterialModule } from '../material/material.module';
       multi: true
     }
   ],
-  exports: [MaterialModule]
+  exports: [MaterialModule, DigitsOnlyDirective]
 })
 export class CoreModule { }

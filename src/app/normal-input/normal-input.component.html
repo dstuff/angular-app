@@ -1,0 +1,9 @@
+<mat-form-field floatLabel="never" [formGroup]="form">
+  <ng-container *ngIf="column?.digitsOnly; else textInput">
+    <input matInput formControlName="input" type="text" appDigitsOnly (blur)="submitChanges()">
+  </ng-container>
+
+  <ng-template #textInput>
+    <input matInput formControlName="input" type="text" (blur)="submitChanges()">
+  </ng-template>
+</mat-form-field>

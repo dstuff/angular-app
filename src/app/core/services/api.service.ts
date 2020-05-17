@@ -6,7 +6,6 @@ import {map, tap} from 'rxjs/operators';
 import { DataService } from './data.service';
 import { IFullData } from '../models';
 
-
 const DATA_URL = 'https://someapiserver.com/json-data';
 
 @Injectable({
@@ -26,8 +25,8 @@ export class ApiService {
       );
   }
 
-  post(record: any): Observable<IFullData[]> {
-    return this.http.post<any>(DATA_URL, record);
+  post(): Observable<IFullData[]> {
+    return this.http.post<any>(DATA_URL, {});
   }
 
   update(data: any): Observable<IFullData[]> {
@@ -35,7 +34,7 @@ export class ApiService {
     return this.http.patch<any>(`${DATA_URL}/${eventId}`, data);
   }
 
-  delete(eventId: number): Observable<void> {
-    return this.http.delete<void>(`${DATA_URL}/${eventId}`);
+  delete(eventId: number): Observable<any> {
+    return this.http.delete(`${DATA_URL}/${eventId}`);
   }
 }

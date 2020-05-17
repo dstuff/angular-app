@@ -31,14 +31,14 @@ export class DataService {
     this.storage.setItem(this.key, data);
   }
 
-  addItem(item: any): IFullData[] {
+  addItem(): IFullData[] {
     const storedData = this.storage.getItem(this.key);
 
     if (!storedData) {
       return;
     }
 
-    const newItem = { ...item, ...this.generateNextIds(storedData) };
+    const newItem = { ...this.generateNextIds(storedData) };
     const updatedData = [...storedData, newItem];
     this.storage.setItem(this.key, updatedData);
 

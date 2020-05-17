@@ -21,7 +21,7 @@ export class MockInterceptor implements HttpInterceptor {
     if (request.method === 'GET') {
       return this.getData();
     } else if (request.method === 'POST') {
-      return this.addData(request);
+      return this.addData();
     } else if (request.method === 'PATCH') {
       return this.updateData(request);
     } else if (request.method === 'DELETE') {
@@ -40,25 +40,24 @@ export class MockInterceptor implements HttpInterceptor {
       );
   }
 
-  private addData(request: any): Observable<any> {
-    const item = request.body;
-    this.dataService.addItem(item);
+  private addData(): Observable<any> {
+    const updatedData = this.dataService.addItem();
 
-    return of(new HttpResponse({ status: 200, body: ((item) as IFullData[]) }))
-      .pipe(delay(Math.random() * 2000)); // simulate server-side request delay
+    return of(new HttpResponse({ status: 200, body: ((updatedData) as IFullData[]) }))
+      .pipe(delay(Math.random() * 750)); // simulate server-side request delay
   }
 
   private updateData(request: any): Observable<any> {
     const updatedData = this.dataService.updateItem(request.body);
 
     return of(new HttpResponse({ status: 200, body: ((updatedData) as IFullData[]) }))
-      .pipe(delay(Math.random() * 3000)); // simulate server-side request delay
+      .pipe(delay(Math.random() * 750)); // simulate server-side request delay
   }
 
   private deleteData(eventId: number): Observable<any> {
     const updatedData = this.dataService.deleteItem(eventId);
 
     return of(new HttpResponse({ status: 200, body: ((updatedData) as IFullData[]) }))
-      .pipe(delay(Math.random() * 1000)); // simulate server-side request delay
+      .pipe(delay(Math.random() * 750)); // simulate server-side request delay
   }
 }

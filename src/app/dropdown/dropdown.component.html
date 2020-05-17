@@ -1,0 +1,7 @@
+<mat-form-field floatLabel="never" [formGroup]="form">
+  <mat-select formControlName="value">
+    <mat-option *ngFor="let opt of options" [value]="opt">
+      {{ opt }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

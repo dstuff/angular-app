@@ -11,7 +11,7 @@ export enum Type {
   dryOff
 }
 
-export const mapType = {
+export const mapEventType = {
   [Type.systemHealth]: 'systemHealth',
   [Type.preCalving]: 'preCalving',
   [Type.distress]: 'distress',
